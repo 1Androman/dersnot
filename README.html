@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsch A1.1 - Cep Çalışma Kılavuzu | Mehmet Matyar</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 10mm;
+        }
+        @media print {
+            body {
+                font-size: 10pt;
+                line-height: 1.3;
+            }
+            .no-print {
+                display: none;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+            .card {
+                break-inside: avoid;
+            }
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #2c3e50;
+            line-height: 1.4;
+        }
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 15mm;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "🇩🇪";
+            position: absolute;
+            font-size: 100px;
+            opacity: 0.1;
+            right: -20px;
+            top: -20px;
+        }
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .author-box {
+            background: rgba(255,255,255,0.2);
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        .author-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .teacher-name {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .section {
+            margin-bottom: 25px;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+        .section-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .badge {
+            background: #e74c3c;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 9pt;
+        }
+        th {
+            background: #34495e;
+            color: white;
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+        }
+        td {
+            padding: 6px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .card {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 5px;
+            font-size: 11px;
+            text-transform: uppercase;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .verb-table {
+            font-size: 8.5pt;
+        }
+        .verb-table th {
+            background: #2980b9;
+        }
+        .verb-table .ich { color: #e74c3c; font-weight: bold; }
+        .verb-table .du { color: #2980b9; font-weight: bold; }
+        .verb-table .er { color: #27ae60; font-weight: bold; }
+        .verb-table .sie { color: #8e44ad; font-weight: bold; }
+        
+        .time-box {
+            display: flex;
+            justify-content: space-between;
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+        .time-item {
+            text-align: center;
+            flex: 1;
+        }
+        .time-hour {
+            font-size: 10px;
+            color: #7f8c8d;
+        }
+        .time-greet {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 11px;
+        }
+        .warning {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        .tip {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 8px;
+            margin: 8px 0;
+            font-size: 10px;
+            border-radius: 0 4px 4px 0;
+        }
+        .phonetic {
+            color: #e74c3c;
+            font-style: italic;
+            font-size: 9px;
+        }
+        .dialogue {
+            background: #f1f3f4;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+        .dialogue .speaker {
+            color: #2980b9;
+            font-weight: bold;
+        }
+        .checklist {
+            list-style: none;
+        }
+        .checklist li::before {
+            content: "☐ ";
+            color: #e74c3c;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        h3 {
+            font-size: 14px;
+            color: #34495e;
+            margin: 15px 0 8px 0;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 3px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 9px;
+            color: #7f8c8d;
+            border-top: 1px solid #ecf0f1;
+            padding-top: 10px;
+        }
+        .footer-author {
+            background: #667eea;
+            color: white;
+            padding: 8px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .alphabet-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 5px;
+            font-size: 9px;
+        }
+        .letter-box {
+            text-align: center;
+            padding: 5px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .letter {
+            font-weight: bold;
+            color: #e74c3c;
+            font-size: 12px;
+        }
+        .pronounce {
+            color: #7f8c8d;
+            font-size: 8px;
+        }
+        .credit-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .credit-title {
+            font-size: 12px;
+            opacity: 0.9;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .credit-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .credit-teacher {
+            font-size: 14px;
+            opacity: 0.95;
+            border-top: 1px solid rgba(255,255,255,0.3);
+            padding-top: 5px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HAZIRLAYAN BİLGİSİ -->
+        <div class="credit-section">
+            <div class="credit-title">Bu Çalışma Kılavuzunu Hazırlayan</div>
+            <div class="credit-name">Mehmet Matyar</div>
+            <div class="credit-teacher">Öğretmen: Şeyma Epözdemir</div>
+        </div>
+
+        <!-- KAPAK -->
+        <div class="header">
+            <h1>DEUTSCH A1.1</h1>
+            <p>CEP ÇALIŞMA KILAVUZU</p>
+            <p style="font-size: 12px; margin-top: 10px;">Temelden İletişime</p>
+            
+            <div class="author-box">
+                <div class="author-name">✍️ Mehmet Matyar</div>
+                <div class="teacher-name">👩‍🏫 Öğretmen: Şeyma Epözdemir</div>
+            </div>
+        </div>
+
+        <!-- ALTIN KURALLAR -->
+        <div class="section">
+            <div class="section-title">
+                <span>👑</span> ALTIN KURALLAR (Gramer Temeli)
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-title">1. Büyük Harf Kuralı</div>
+                    <p>Her <span class="highlight">isim</span> büyük harfle başlar!</p>
+                    <p style="font-size: 9px; margin-top: 5px; color: #666;">
+                        Ich wohne in <strong>B</strong>erlin.<br>
+                        Das ist ein <strong>B</strong>uch.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">2. Fiil Çekimi</div>
+                    <p>Fiil kişiye göre değişir:</p>
+                    <p style="font-size: 9px; margin-top: 5px;">
+                        ich komm<strong>e</strong> | du komm<strong>st</strong> | er komm<strong>t</strong>
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">3. Edatlar (Kritik!)</div>
+                    <p><strong>aus</strong> = köken (Türkiye'den)<br>
+                    <strong>in</strong> = konum (Berlin'de)</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">4. Resmi vs Samimi</div>
+                    <p><strong>du/dir</strong> = arkadaş<br>
+                    <strong>Sie/Ihnen</strong> = resmi/yabancı</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ALFABE -->
+        <div class="section">
+            <div class="section-title">
+                <span>🔤</span> ALFABE & TELAFFUZ
+            </div>
+            <div class="alphabet-grid">
+                <div class="letter-box"><div class="letter">Aa</div><div class="pronounce">aa</div></div>
+                <div class="letter-box"><div class="letter">Bb</div><div class="pronounce">bee</div></div>
+                <div class="letter-box"><div class="letter">Cc</div><div class="pronounce">tsee</div></div>
+                <div class="letter-box"><div class="letter">Dd</div><div class="pronounce">dee</div></div>
+                <div class="letter-box"><div class="letter">Ee</div><div class="pronounce">ee</div></div>
+                <div class="letter-box"><div class="letter">Ff</div><div class="pronounce">ef</div></div>
+                <div class="letter-box"><div class="letter">Gg</div><div class="pronounce">gee</div></div>
+                <div class="letter-box"><div class="letter">Hh</div><div class="pronounce">ha</div></div>
+                <div class="letter-box"><div class="letter">Ii</div><div class="pronounce">i</div></div>
+                <div class="letter-box"><div class="letter">Jj</div><div class="pronounce">yot</div></div>
+                <div class="letter-box"><div class="letter">Kk</div><div class="pronounce">ka</div></div>
+                <div class="letter-box"><div class="letter">Ll</div><div class="pronounce">el</div></div>
+                <div class="letter-box"><div class="letter">Mm</div><div class="pronounce">em</div></div>
+                <div class="letter-box"><div class="letter">Nn</div><div class="pronounce">en</div></div>
+                <div class="letter-box"><div class="letter">Oo</div><div class="pronounce">o</div></div>
+                <div class="letter-box"><div class="letter">Pp</div><div class="pronounce">pee</div></div>
+                <div class="letter-box"><div class="letter">Qq</div><div class="pronounce">ku</div></div>
+                <div class="letter-box"><div class="letter">Rr</div><div class="pronounce">err</div></div>
+                <div class="letter-box"><div class="letter">Ss</div><div class="pronounce">es</div></div>
+                <div class="letter-box"><div class="letter">Tt</div><div class="pronounce">te</div></div>
+                <div class="letter-box"><div class="letter">Uu</div><div class="pronounce">u</div></div>
+                <div class="letter-box"><div class="letter">Vv</div><div class="pronounce">fau</div></div>
+                <div class="letter-box"><div class="letter">Ww</div><div class="pronounce">vee</div></div>
+                <div class="letter-box"><div class="letter">Xx</div><div class="pronounce">iks</div></div>
+                <div class="letter-box"><div class="letter">Yy</div><div class="pronounce">ypsilon</div></div>
+                <div class="letter-box"><div class="letter">Zz</div><div class="pronounce">tset</div></div>
+                <div class="letter-box" style="background: #ffeaa7;"><div class="letter">Ää</div><div class="pronounce">e</div></div>
+                <div class="letter-box" style="background: #ffeaa7;"><div class="letter">Öö</div><div class="pronounce">ö</div></div>
+                <div class="letter-box" style="background: #ffeaa7;"><div class="letter">Üü</div><div class="pronounce">ü</div></div>
+                <div class="letter-box" style="background: #ffeaa7;"><div class="letter">ß</div><div class="pronounce">ss</div></div>
+            </div>
+            
+            <div class="tip">
+                <strong>Zor Sesler:</strong> EU=oy (Deu-tsch), EI=ay (mein), CH=h (ich), SCH=ş (Schule), W=V (Wie), V=F (Vater)
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- SELAMLAŞMA -->
+        <div class="section">
+            <div class="section-title">
+                <span>👋</span> SELAMLAŞMA & VEDALAŞMA
+            </div>
+            
+            <h3>Günün Saatlerine Göre</h3>
+            <div class="time-box">
+                <div class="time-item">
+                    <div class="time-hour">05-11</div>
+                    <div class="time-greet">Guten Morgen</div>
+                </div>
+                <div class="time-item">
+                    <div class="time-hour">11-18</div>
+                    <div class="time-greet">Guten Tag</div>
+                </div>
+                <div class="time-item">
+                    <div class="time-hour">18-22</div>
+                    <div class="time-greet">Guten Abend</div>
+                </div>
+                <div class="time-item">
+                    <div class="time-hour">22+</div>
+                    <div class="time-greet">Gute Nacht</div>
+                </div>
+            </div>
+
+            <h3>Formel (Sie) vs Samimi (du)</h3>
+            <table>
+                <tr>
+                    <th>Samimi (Arkadaş)</th>
+                    <th>Resmi (İş/Yabancı)</th>
+                    <th>Anlamı</th>
+                </tr>
+                <tr>
+                    <td>Wie heißt <strong>du</strong>?</td>
+                    <td>Wie heißen <strong>Sie</strong>?</td>
+                    <td>Adın/Adınız ne?</td>
+                </tr>
+                <tr>
+                    <td>Wie geht es <strong>dir</strong>?</td>
+                    <td>Wie geht es <strong>Ihnen</strong>?</td>
+                    <td>Nasılsın/sınız?</td>
+                </tr>
+                <tr>
+                    <td>Und <strong>dir</strong>?</td>
+                    <td>Und <strong>Ihnen</strong>?</td>
+                    <td>Peki sen/siz?</td>
+                </tr>
+                <tr>
+                    <td>Danke <strong>dir</strong>!</td>
+                    <td>Danke <strong>Ihnen</strong>!</td>
+                    <td>Teşekkürler</td>
+                </tr>
+            </table>
+
+            <h3>Vedalaşma Repertuarı</h3>
+            <div class="grid-3">
+                <div class="card" style="font-size: 9px;">
+                    <strong>Tschüs!</strong> - Güle güle<br>
+                    <strong>Ciao!</strong> - Çav<br>
+                    <strong>Bis bald!</strong> - Yakında
+                </div>
+                <div class="card" style="font-size: 9px;">
+                    <strong>Auf Wiedersehen</strong> - Yüzyüze<br>
+                    <strong>Auf Wiederhören</strong> - Telefon!<br>
+                    <strong>Mach's gut!</strong> - Kendine iyi bak
+                </div>
+                <div class="card" style="font-size: 9px;">
+                    <strong>Bis später!</strong> - Sonra<br>
+                    <strong>Bis morgen!</strong> - Yarın<br>
+                    <strong>Gute Nacht!</strong> - İyi geceler
+                </div>
+            </div>
+        </div>
+
+        <!-- KONUM/KÖKEN -->
+        <div class="section">
+            <div class="section-title">
+                <span>🌍</span> KONUM vs KÖKEN (Kritik Fark!)
+            </div>
+            <div class="grid-2">
+                <div class="card" style="border-left: 4px solid #e74c3c;">
+                    <div class="card-title">WOHER? (Nerelisin?)</div>
+                    <p><strong>Soru:</strong> Woher kommst du?</p>
+                    <p><strong>Cevap:</strong> Ich komme <span class="highlight">aus</span> der Türkei.</p>
+                    <p style="font-size: 9px; color: #666; margin-top: 5px;">
+                        aus = -den (köken)<br>
+                        aus Deutschland, aus Berlin
+                    </p>
+                </div>
+                <div class="card" style="border-left: 4px solid #2980b9;">
+                    <div class="card-title">WO? (Nerede oturuyorsun?)</div>
+                    <p><strong>Soru:</strong> Wo wohnst du?</p>
+                    <p><strong>Cevap:</strong> Ich wohne <span class="highlight">in</span> Istanbul.</p>
+                    <p style="font-size: 9px; color: #666; margin-top: 5px;">
+                        in = -de/-da (konum)<br>
+                        in Berlin, in München
+                    </p>
+                </div>
+            </div>
+            <div class="warning" style="margin-top: 10px;">
+                <strong>❌ Yaygın Hata:</strong> "Ich wohne <u>aus</u> Berlin" değil, "Ich wohne <strong>in</strong> Berlin"!
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- FİİL ÇEKİMİ -->
+        <div class="section">
+            <div class="section-title">
+                <span>⚡</span> FİİL ÇEKİMİ (Konjugation)
+            </div>
+            
+            <table class="verb-table">
+                <tr>
+                    <th>Zamir</th>
+                    <th>sein<br><small>(olmak)</small></th>
+                    <th>heißen<br><small>(adı olmak)</small></th>
+                    <th>kommen<br><small>(gelmek)</small></th>
+                    <th>wohnen<br><small>(oturmak)</small></th>
+                    <th>sprechen<br><small>(konuşmak)</small></th>
+                    <th>lernen<br><small>(öğrenmek)</small></th>
+                    <th>arbeiten<br><small>(çalışmak)</small></th>
+                </tr>
+                <tr>
+                    <td class="ich">ich</td>
+                    <td>bin</td>
+                    <td>heiße</td>
+                    <td>komme</td>
+                    <td>wohne</td>
+                    <td>spreche</td>
+                    <td>lerne</td>
+                    <td>arbeite</td>
+                </tr>
+                <tr>
+                    <td class="du">du</td>
+                    <td>bist</td>
+                    <td>heißt</td>
+                    <td>kommst</td>
+                    <td>wohnst</td>
+                    <td>sprichst</td>
+                    <td>lernst</td>
+                    <td>arbeitest</td>
+                </tr>
+                <tr>
+                    <td class="er">er/sie/es</td>
+                    <td>ist</td>
+                    <td>heißt</td>
+                    <td>kommt</td>
+                    <td>wohnt</td>
+                    <td>spricht</td>
+                    <td>lernt</td>
+                    <td>arbeitet</td>
+                </tr>
+                <tr>
+                    <td class="sie">Sie</td>
+                    <td>sind</td>
+                    <td>heißen</td>
+                    <td>kommen</td>
+                    <td>wohnen</td>
+                    <td>sprechen</td>
+                    <td>lernen</td>
+                    <td>arbeiten</td>
+                </tr>
+            </table>
+
+            <div class="tip">
+                <strong>İpucu:</strong> Er/Sie/Es (3. tekil şahıs) her zaman <strong>-t</strong> takısı alır. 
+                "Arbeiten" ve "sprechen" gibi fiillerde sessiz harf öne geçer: arbeit<strong>et</strong>, sprich<strong>t</strong>
+            </div>
+        </div>
+
+        <!-- ZAMİRLER -->
+        <div class="section">
+            <div class="section-title">
+                <span>👥</span> KİŞİ ZAMİRLERİ (Personalpronomen)
+            </div>
+            <div class="grid-2">
+                <div>
+                    <table>
+                        <tr>
+                            <th>Almanca</th>
+                            <th>Anlamı</th>
+                            <th>Örnek</th>
+                        </tr>
+                        <tr>
+                            <td><strong>ich</strong></td>
+                            <td>ben</td>
+                            <td>Ich bin müde.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>du</strong></td>
+                            <td>sen</td>
+                            <td>Du bist nett.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>er</strong></td>
+                            <td>o (erkek)</td>
+                            <td>Er kommt aus Berlin.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sie</strong></td>
+                            <td>o (kız)</td>
+                            <td>Sie wohnt in Istanbul.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>es</strong></td>
+                            <td>o (cansız)</td>
+                            <td>Es ist gut.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sie</strong></td>
+                            <td>Siz (resmi)</td>
+                            <td>Sind Sie Herr Müller?</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-title">3. Tekil Şahıs Kuralı</div>
+                    <p style="font-size: 10px; line-height: 1.8;">
+                        <strong>Er</strong> = erkek için<br>
+                        <strong>Sie</strong> (küçük) = kız için<br>
+                        <strong>Es</strong> = nesne için<br><br>
+                        
+                        <strong>Kullanım:</strong><br>
+                        • Er heißt Thomas.<br>
+                        • Sie heißt Maria.<br>
+                        • Es ist ein Buch.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- W-SORULARI -->
+        <div class="section">
+            <div class="section-title">
+                <span>❓</span> W-FRAGEN (Soru Kelimeleri)
+            </div>
+            <table>
+                <tr>
+                    <th>Soru</th>
+                    <th>Anlamı</th>
+                    <th>Örnek Soru</th>
+                    <th>Örnek Cevap</th>
+                </tr>
+                <tr>
+                    <td><strong>Wer?</strong></td>
+                    <td>Kim?</td>
+                    <td>Wer ist das?</td>
+                    <td>Das ist Thomas.</td>
+                </tr>
+                <tr>
+                    <td><strong>Was?</strong></td>
+                    <td>Ne?</td>
+                    <td>Was ist das?</td>
+                    <td>Das ist ein Buch.</td>
+                </tr>
+                <tr>
+                    <td><strong>Wie?</strong></td>
+                    <td>Nasıl?</td>
+                    <td>Wie geht es dir?</td>
+                    <td>Es geht mir gut.</td>
+                </tr>
+                <tr>
+                    <td><strong>Wo?</strong></td>
+                    <td>Nerede?</td>
+                    <td>Wo wohnst du?</td>
+                    <td>Ich wohne in Berlin.</td>
+                </tr>
+                <tr>
+                    <td><strong>Woher?</strong></td>
+                    <td>Nerden?</td>
+                    <td>Woher kommst du?</td>
+                    <td>Ich komme aus Türkei.</td>
+                </tr>
+                <tr>
+                    <td><strong>Welche?</strong></td>
+                    <td>Hangi?</td>
+                    <td>Welche Sprache sprichst du?</td>
+                    <td>Ich spreche Deutsch.</td>
+                </tr>
+            </table>
+
+            <div class="warning" style="margin-top: 10px;">
+                <strong>Wo</strong> vs <strong>Woher</strong> karıştırmayın!<br>
+                Wo = Nerede (konum) | Woher = Nerden (köken)
+            </div>
+        </div>
+
+        <!-- HAZIR KALIPLAR -->
+        <div class="section">
+            <div class="section-title">
+                <span>💬</span> KULLANIŞLI KALIPLAR
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="card-title">Kendini Tanıtma</div>
+                    <p style="font-size: 10px; line-height: 1.6;">
+                        • Ich heiße... / Ich bin...<br>
+                        • Ich komme aus...<br>
+                        • Ich wohne in...<br>
+                        • Ich spreche...<br>
+                        • Ich lerne Deutsch.<br>
+                        • Ich arbeite in...<br>
+                        • Freut mich, Sie kennenzulernen!
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">Başkasını Tanıtma</div>
+                    <p style="font-size: 10px; line-height: 1.6;">
+                        • Das ist... (Bu ...)<br>
+                        • Er heißt... (O erkek)<br>
+                        • Sie heißt... (O kız)<br>
+                        • Er kommt aus...<br>
+                        • Sie wohnt in...<br>
+                        • Er spricht...<br>
+                        • Das ist mein Freund. (Arkadaşım)
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">Hal Hatır</div>
+                    <p style="font-size: 10px; line-height: 1.6;">
+                        • Wie geht es dir/Ihnen?<br>
+                        • Es geht mir gut/super.<br>
+                        • Es geht. (İdare eder)<br>
+                        • Es geht mir nicht gut.<br>
+                        • Und dir/Ihnen?<br>
+                        • Mir geht es auch gut.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-title">Dil İfadeleri</div>
+                    <p style="font-size: 10px; line-height: 1.6;">
+                        • Ich spreche Deutsch.<br>
+                        • Ich spreche ein bisschen Deutsch.<br>
+                        • Ich spreche Türkisch und Englisch.<br>
+                        • Welche Sprache sprichst du?<br>
+                        • Sprechen Sie...?
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DİYALOG -->
+        <div class="section">
+            <div class="section-title">
+                <span>🎭</span> ÖRNEK DİYALOG
+            </div>
+            <div class="dialogue">
+                <span class="speaker">Ahmet:</span> Guten Tag! Wie heißen Sie?<br>
+                <span class="speaker">Maria:</span> Ich heiße Maria. Und Sie?<br>
+                <span class="speaker">Ahmet:</span> Ich bin Ahmet. Freut mich!<br>
+                <span class="speaker">Maria:</span> Freut mich auch. Woher kommen Sie?<br>
+                <span class="speaker">Ahmet:</span> Ich komme aus der Türkei, aus Ankara. Aber ich wohne jetzt in Berlin.<br>
+                <span class="speaker">Maria:</span> Welche Sprachen sprechen Sie?<br>
+                <span class="speaker">Ahmet:</span> Ich spreche Türkisch, ein bisschen Deutsch und Englisch. Und Sie?<br>
+                <span class="speaker">Maria:</span> Ich spreche Deutsch und Englisch. Das ist Frau Müller.<br>
+                <span class="speaker">Ahmet:</span> Ah, hallo Frau Müller!<br>
+                <span class="speaker">Maria:</span> Bis später, Ahmet!<br>
+                <span class="speaker">Ahmet:</span> Tschüs! Mach's gut!
+            </div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- HATALAR -->
+        <div class="section">
+            <div class="section-title">
+                <span>⚠️</span> SIK YAPILAN HATALAR
+            </div>
+            <table>
+                <tr>
+                    <th style="background: #e74c3c;">❌ Yanlış</th>
+                    <th style="background: #27ae60;">✅ Doğru</th>
+                    <th>Açıklama</th>
+                </tr>
+                <tr>
+                    <td>Ich heißen</td>
+                    <td>Ich <strong>heiße</strong></td>
+                    <td>ich = -e takısı</td>
+                </tr>
+                <tr>
+                    <td>Er komme</td>
+                    <td>Er <strong>kommt</strong></td>
+                    <td>er = -t takısı</td>
+                </tr>
+                <tr>
+                    <td>Sie arbeit</td>
+                    <td>Sie <strong>arbeitet</strong></td>
+                    <td>-t önce e gelir</td>
+                </tr>
+                <tr>
+                    <td>Ich wohne aus Berlin</td>
+                    <td>Ich wohne <strong>in</strong> Berlin</td>
+                    <td>aus = köken, in = konum</td>
+                </tr>
+                <tr>
+                    <td>Auf Wiedersehen (telefon)</td>
+                    <td>Auf <strong>Wiederhören</strong></td>
+                    <td>Telefonda farklı!</td>
+                </tr>
+                <tr>
+                    <td>ich lerne deutsch</td>
+                    <td>Ich lerne <strong>D</strong>eutsch</td>
+                    <td>Diller büyük harf!</td>
+                </tr>
+                <tr>
+                    <td>Danke dir (patrona)</td>
+                    <td>Danke <strong>Ihnen</strong></td>
+                    <td>Resmiyet önemli</td>
+                </tr>
+                <tr>
+                    <td>Wo wohnt du?</td>
+                    <td>Wo <strong>wohnst</strong> du?</td>
+                    <td>du = -st takısı</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- KONTROL LİSTESİ -->
+        <div class="section">
+            <div class="section-title">
+                <span>✓</span> KENDİNİ TEST ET
+            </div>
+            <div class="grid-2">
+                <div>
+                    <h3>Gramer Kontrol</h3>
+                    <ul class="checklist">
+                        <li>İsimleri büyük yazıyorum</li>
+                        <li>Fiil çekimlerini kontrol ediyorum (ich-e, du-st, er-t)</li>
+                        <li>Aus/In ayrımını yapıyorum</li>
+                        <li>Du/Sie seçimine dikkat ediyorum</li>
+                        <li>Telaffuz kurallarını (eu, ei, ch) uyguluyorum</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Pratik Kontrol</h3>
+                    <ul class="checklist">
+                        <li>Kendimi 1 dakika tanıtabiliyorum</li>
+                        <li>Başkasını tanıtabiliyorum (Das ist...)</li>
+                        <li>Tüm W-sorularını kullanabiliyorum</li>
+                        <li>Telefon diyaloğu yapabiliyorum</li>
+                        <li>Adımı Almanca harflerle heceleyebiliyorum</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- KELİME HAZNESİ -->
+        <div class="section">
+            <div class="section-title">
+                <span>📚</span> TEMEL KELİMELER
+            </div>
+            <div class="grid-3" style="font-size: 9px;">
+                <div class="card">
+                    <strong>Fiiller:</strong><br>
+                    sein, haben, heißen, kommen, wohnen, arbeiten, lernen, sprechen, machen, gehen
+                </div>
+                <div class="card">
+                    <strong>İsimler:</strong><br>
+                    der Name, die Stadt, das Land, die Sprache, das Café, die Arbeit, das Buch, der Freund, die Freundin
+                </div>
+                <div class="card">
+                    <strong>Sıfatlar:</strong><br>
+                    gut, schlecht, super, schön, groß, klein, neu, alt, müde, nett
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-author">
+                📚 Hazırlayan: Mehmet Matyar<br>
+                👩‍🏫 Öğretmen: Şeyma Epözdemir<br>
+                <span style="font-size: 8px; opacity: 0.8;">Almanca A1.1 Ders Notları Derlemesi</span>
+            </div>
+            <em>"Übung macht den Meister" (Alıştırma ustayı yapar)</em><br>
+            <span style="font-size: 8px; margin-top: 5px; display: block;">
+                Bu kılavuz tarayıcınızdan PDF olarak kaydedilebilir (Ctrl+P → PDF olarak kaydet)
+            </span>
+        </div>
+
+        <!-- PDF YAPMA TALİMATI (Görünür ama yazdırılmaz) -->
+        <div class="no-print" style="margin-top: 30px; padding: 20px; background: #f8f9fa; border: 2px dashed #667eea; border-radius: 10px; text-align: center;">
+            <h3 style="color: #667eea; margin-bottom: 10px;">📱 PDF Olarak Kaydetmek İçin:</h3>
+            <p style="font-size: 14px; color: #555;">
+                1. <strong>Ctrl+P</strong> (veya
